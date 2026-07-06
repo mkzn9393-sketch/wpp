@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات الجامعة الافتراضية | تفاصيل الفعالية</title>
+    <!-- Bootstrap & Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-calendar-days me-2"></i> دليل فعاليات SVU
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="darkModeToggle" class="btn btn-outline-secondary btn-sm ms-3">
+                        <i class="fa-solid fa-moon"></i> وضع ليلي
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <!-- زر العودة -->
+        <a href="events.html" class="btn btn-outline-secondary mb-4">
+            <i class="fa-solid fa-arrow-right"></i> العودة للفعاليات
+        </a>
+        
+        <div class="row">
+            <!-- المحتوى الأيمن -->
+            <div class="col-md-8">
+                <h2 id="detailTitle" class="mb-3">جاري التحميل...</h2>
+                <div class="mb-3 text-muted">
+                    <span class="me-3"><i class="fa-regular fa-calendar"></i> <span id="detailDate">...</span></span>
+                    <span class="me-3"><i class="fa-solid fa-location-dot"></i> <span id="detailLocation">...</span></span>
+                    <span id="detailCategory" class="badge bg-primary">...</span>
+                </div>
+                <img id="detailImg" src="" class="img-fluid rounded mb-4" alt="صورة الفعالية">
+                
+                <h4>وصف الفعالية</h4>
+                <p id="detailDesc" class="mb-4" style="line-height: 1.8;">...</p>
+
+                <h4>معرض الصور</h4>
+                <div class="row mb-4">
+                    <div class="col-4"><img src="https://picsum.photos/id/10/300/200" class="gallery-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/11/300/200" class="gallery-img"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/12/300/200" class="gallery-img"></div>
+                </div>
+            </div>
+
+            <!-- المحتوى الأيسر -->
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <h4>الموقع</h4>
+                    <div class="static-map mb-3">
+                        [صورة خريطة الموقع]
+                    </div>
+                    <p class="small text-muted">جامعة دمشق، بناء الجامعة الافتراضية السورية، الطابق الثالث.</p>
+                    
+                    <button class="btn btn-success w-100 mb-2" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                        <i class="fa-solid fa-ticket"></i> احجز مكانك الآن (Bonus)
+                    </button>
+                    <button class="btn btn-outline-primary w-100 mb-2">
+                        <i class="fa-regular fa-calendar-plus"></i> أضف للتقويم
+                    </button>
+                    <button class="btn btn-outline-secondary w-100">
+                        <i class="fa-solid fa-share-nodes"></i> شارك الفعالية
+                    </button>
+                </div>
+
+                <div class="card p-3">
+                    <h5>فعاليات ذات صلة</h5>
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item px-0"><a href="#" onclick="viewEventDetails(2)">ماراثون الجامعة</a></li>
+                        <li class="list-group-item px-0"><a href="#" onclick="viewEventDetails(3)">معرض الكتاب</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal حجز الفعالية -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: var(--card-bg); color: var(--text-color);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">تأكيد الحجز</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    هل أنت متأكد من رغبتك في حجز مقعد في هذه الفعالية؟ سيتم إرسال تذكرة إلكترونية إلى بريدك الجامعي.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="alert('تم الحجز بنجاح!')">تأكيد الحجز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-md-start">
+        <div class="container"><p class="mb-0">&copy; 2026 جميع الحقوق محفوظة لطلاب WP1HW.</p></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

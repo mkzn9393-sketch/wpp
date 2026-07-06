@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات الجامعة الافتراضية | كل الفعاليات</title>
+    <!-- Bootstrap & Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-calendar-days me-2"></i> دليل فعاليات SVU
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">كل الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="darkModeToggle" class="btn btn-outline-secondary btn-sm ms-3">
+                        <i class="fa-solid fa-moon"></i> وضع ليلي
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <h2 class="mb-4">دليل الفعاليات الشامل</h2>
+            
+            <!-- شريط البحث والفلترة -->
+            <div class="row bg-light p-3 rounded mb-4 shadow-sm" style="background-color: var(--card-bg) !important;">
+                <div class="col-md-4 mb-2">
+                    <input type="text" id="searchInput" class="form-control" placeholder="ابحث باسم الفعالية..." onkeyup="filterEventsList()">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <select id="categoryFilter" class="form-select" onchange="filterEventsList()">
+                        <option value="all">كل التصنيفات</option>
+                        <option value="تقنية">تقنية</option>
+                        <option value="ثقافة">ثقافة</option>
+                        <option value="رياضة">رياضة</option>
+                        <option value="موسيقى">موسيقى</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <input type="date" id="dateFilter" class="form-control" onchange="filterEventsList()">
+                </div>
+                <div class="col-md-2 mb-2">
+                    <button class="btn btn-primary w-100" onclick="clearFilters()">مسح الفلاتر</button>
+                </div>
+            </div>
+
+            <!-- حاوية الفعاليات -->
+            <div class="row g-4" id="allEventsContainer">
+                <!-- سيتم توليد البطاقات هنا بواسطة JavaScript -->
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-md-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5>دليل فعاليات الجامعة الافتراضية</h5>
+                    <p class="small text-muted">منصة تهدف لتنظيم وعرض كافة الأنشطة الطلابية والأكاديمية.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2026 جميع الحقوق محفوظة لطلاب WP1HW.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
